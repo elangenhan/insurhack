@@ -5,6 +5,7 @@ import { ChatPage } from '../pages/chat/chat';
 import { ProfilePage } from '../pages/profile/profile';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { DetailPage } from '../pages/detail/detail';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     ChatPage,
     ProfilePage,
     HomePage,
-    TabsPage
+    TabsPage,
+    DetailPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -23,7 +25,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     ChatPage,
     ProfilePage,
     HomePage,
-    TabsPage
+    TabsPage,
+    DetailPage
   ],
   providers: []
 })

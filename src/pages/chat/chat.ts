@@ -14,13 +14,7 @@ export class ChatPage {
   constructor(public navCtrl: NavController) {
       this.messages = [{
           align: "left",
-          message: "Test"
-      }, {
-          align: "right",
-          message: "another test"
-      }, {
-          align: "left",
-          message: "asd"
+          message: "Hello, how may I help you?"
       }];
   }
 

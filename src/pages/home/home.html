@@ -13,19 +13,9 @@
     </ion-card-header>
 
     <ion-list>
-      <button ion-item>
-        <ion-icon name="cart" item-left></ion-icon>
-        Life Insurance
-       </button>
-
-      <button ion-item>
-        <ion-icon name="medical" item-left></ion-icon>
-        Health Care
-      </button>
-
-      <button ion-item>
-         <ion-icon name="medical" item-left></ion-icon>
-         Indemnity Insurance
+      <button ion-item *ngFor="let item of currentPolicies" (click)="goToPage(item)">
+        <ion-icon name="{{item.icon}}" item-left></ion-icon>
+        {{item.name}}
        </button>
      </ion-list>
    </ion-card>
@@ -37,19 +27,9 @@
     </ion-card-header>
 
     <ion-list>
-      <button ion-item>
-        <ion-icon name="cart" item-left></ion-icon>
-        Life Insurance
-       </button>
-
-      <button ion-item>
-        <ion-icon name="medical" item-left></ion-icon>
-        Health Care
-      </button>
-
-      <button ion-item>
-         <ion-icon name="medical" item-left></ion-icon>
-         Indemnity Insurance
+      <button ion-item *ngFor="let item of offerings" (click)="goToPage(item)">
+        <ion-icon name="{{item.icon}}" item-left></ion-icon>
+        {{item.name}}
        </button>
      </ion-list>
    </ion-card>
