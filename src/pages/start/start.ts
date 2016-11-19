@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController, Platform, NavParams, ViewController, NavController } from 'ionic-angular';
+import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 
 /*
   Generated class for the Start page.
@@ -23,6 +25,10 @@ export class StartPage {
     let modal = this.modalCtrl.create(ModalContentPage);
     modal.present();
   }
+
+  goToHome() {
+  	this.navCtrl.push(TabsPage, {});
+  }
 }
 
 @Component({
@@ -34,8 +40,13 @@ export class ModalContentPage {
 	constructor(
 		public platform: Platform,
 		public params: NavParams,
-		public viewCtrl: ViewController
+		public viewCtrl: ViewController,
+		public navCtrl: NavController
 	) {}
+
+	goToHome() {
+  	this.navCtrl.push(TabsPage, {});
+  }
 
 	dismiss() {
 		this.viewCtrl.dismiss();
