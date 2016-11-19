@@ -19,10 +19,12 @@ export class ChatPage {
   }
 
   sendMessage(input: string) {
+    if(input != "" && input != undefined) {
       this.messages.push({
           align: "right",
           message: input
       })
+    }
 
       this.messageInput = "";
   }
