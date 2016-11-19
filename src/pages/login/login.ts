@@ -16,7 +16,7 @@ export class LoginPage {
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
-    console.log('Hello LoginPage Page');
+
   }
 
 }

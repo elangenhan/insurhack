@@ -23,7 +23,7 @@ export class StartPage {
   }
 
   ionViewDidLoad() {
-    console.log('Hello StartPage Page');
+
   }
 
   openModal() {
