@@ -1,22 +1,29 @@
 $highlight-color: RGBA(61, 129, 242, 1.00);
 
-.chat-bubble {
-    padding: 10px;
-    background-color: $highlight-color;
-    color: white;
-    border-radius: 20px;
-}
+.messageWrapper {
+    overflow: scroll;
+    margin-bottom: 50px;
 
-.bubble-left {
-    margin: 10px 80px 10px 10px;
-}
+    .chat-bubble {
+        padding: 10px;
+        background-color: $highlight-color;
+        color: white;
+        border-radius: 20px;
+    }
 
-.bubble-right {
-    margin: 10px 10px 10px 80px;
+    .bubble-left {
+        margin: 10px 80px 10px 10px;
+    }
+
+    .bubble-right {
+        margin: 10px 10px 10px 80px;
+    }
 }
 
 .chat-send {
     display: flex;
+    position: fixed;
+    bottom: 50px;
 
     .message-input {
         flex: 1 auto;

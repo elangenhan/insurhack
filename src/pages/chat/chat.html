@@ -7,9 +7,11 @@
 </ion-header>
 
 <ion-content>
-    <div *ngFor="let item of messages;">
-        <div class="chat-bubble" [ngClass]="{'bubble-left': item.align == 'left', 'bubble-right': item.align == 'right'}">
-        {{item.message}}
+    <div class="messageWrapper">
+        <div *ngFor="let item of messages;">
+            <div class="chat-bubble" [ngClass]="{'bubble-left': item.align == 'left', 'bubble-right': item.align == 'right'}">
+            {{item.message}}
+            </div>
         </div>
     </div>
 
