@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { DetailPage } from '../detail/detail';
-import { Http } from '@angular/http';
-
+import { PolicyService} from '../../providers/policy-service';
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -15,7 +14,7 @@ export class HomePage {
     private loggedIn;
     private account;
 
-  constructor(public navCtrl: NavController, public http: Http) {
+  constructor(public navCtrl: NavController, public policyService: PolicyService) {
     this.http = http;
       this.currentPolicies = [{
           name: "Unfall",
@@ -47,7 +46,7 @@ export class HomePage {
 
       this.loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
 
-      this.getAccount();
+      this.loadPolicies();
   }
 
   goToPage(data) {
@@ -56,20 +55,11 @@ export class HomePage {
     });
   }
 
-  getPolicies() {
-    let url = "localhost:3000/api/policies";
-  }
-
-  getAccount() {
-    let url = "http://localhost:3000/api/account";
-    this.http.get(url)
-        .subscribe(data => {
-          this.account = data.json();
-          console.log(this.account);
-        }, error => {
-            console.log(JSON.stringify(error.json()));
-        });
-
+  loadPolicies() {
+    this.policyService.load()
+    .then(data => {
+      this.account = data;
+    });
   }
 
 }
