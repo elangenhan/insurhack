@@ -50,7 +50,145 @@
             "OfficialIDStates": [],
             "PatternCode": "UNLine",
             "PublicID": "pc:21",
-            "ODataCustomRemove": null
+            "ODataCustomRemove": null,
+            "UNCosts": [
+              {
+                "@odata.type": "#zde.entities.UNCovPartCovCost_ZDE",
+                "OverrideTermAmountBilling": null,
+                "FXRateConversionUsed": false,
+                "RoundingLevel": 2,
+                "OverrideBaseRate": null,
+                "ActualAmount": {
+                  "Amount": 286.56,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "ActualAmountBilling": {
+                  "Amount": 286.56,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "ActualBaseRate": 139.11,
+                "ActualTermAmountBilling": {
+                  "Amount": 286.56,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "RoundingMode": "tc_HALF_UP",
+                "StandardTermAmount": {
+                  "Amount": 286.56,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "StandardTermAmountBilling": {
+                  "Amount": 286.56,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "StandardAdjRate": 286.56,
+                "OverrideTermAmount": null,
+                "Basis": 0,
+                "StandardBaseRate": 139.11,
+                "ActualAdjRate": 286.56,
+                "CoverageCurrency": "tc_eur",
+                "DisplayName": "\n  (UNCovPartCovCost_ZDE) {ID=5, BeanVersion=0, ActualAdjRate=286.5600, ActualAmountBilling_amt=286.56, ActualAmountBilling_cur=EUR, ActualAmount_amt=286.56, ActualAmount_cur=EUR, ActualBaseRate=139.1100, ActualTermAmountBilling_amt=286.56, ActualTermAmountBilling_cur=EUR, ActualTermAmount_amt=286.56, ActualTermAmount_cur=EUR, ArchivePartition=null, BasedOnValue=null, Basis=0.00, BranchValue=1, ChangeType=Window, ChargeGroup=Accident Insurance, ChargePattern=Premium, CovPartCoverage=45, Coverable=3, CreateTime=Tue Nov 08 15:44:17 CET 2016, CreateUser=3, EffectiveDate=null, ExpirationDate=null, FXRateConversionUsed=false, Fixed=5, IsTaxOverrideRequired_ZDE=null, NumDaysInRatedTerm=365, Overridable=true, OverrideAdjRate=null, OverrideAmountBilling_amt=null, OverrideAmountBilling_cur=null, OverrideAmount_amt=null, OverrideAmount_cur=null, OverrideBaseRate=null, OverrideReason=null, OverrideSource=Manual, OverrideTermAmountBilling_amt=null, OverrideTermAmountBilling_cur=null, OverrideTermAmount_amt=null, OverrideTermAmount_cur=null, PolicyFXRate=null, ProrationMethod=Day-based pro rata amount, PublicID=pc:5, RateAmountType=Standard premium, RateBook=839, RoundingLevel=2, RoundingMode=ROUND_HALF_UP, StandardAdjRate=286.5600, StandardAmountBilling_amt=286.56, StandardAmountBilling_cur=EUR, StandardAmount_amt=286.56, StandardAmount_cur=EUR, StandardBaseRate=139.1100, StandardTermAmountBilling_amt=286.56, StandardTermAmountBilling_cur=EUR, StandardTermAmount_amt=286.56, StandardTermAmount_cur=EUR, SubjectToReporting=false, Subtype=UNCovPartCovCost_ZDE, UNInsuredPerson=3, UNUnfallLine_ZDE=21, UpdateTime=Tue Nov 08 15:44:17 CET 2016, UpdateUser=3}",
+                "OverrideAmountBilling": null,
+                "RateAmountType": "tc_StdPremium",
+                "SettlementCurrency": "tc_eur",
+                "StandardAmountBilling": {
+                  "Amount": 286.56,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "OverrideReason": null,
+                "StandardAmount": {
+                  "Amount": 286.56,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "OverrideAdjRate": null,
+                "ChargePattern": "tc_Premium",
+                "ProrationMethod": "tc_ProRataByDays",
+                "OverrideAmount": null,
+                "ActualTermAmount": {
+                  "Amount": 286.56,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "CoverableName": "Accident Insurance",
+                "OverrideSource": "tc_manual",
+                "PublicID": "pc:5",
+                "ODataCustomRemove": null
+              },
+              {
+                "@odata.type": "#zde.entities.UNCovPartTaxCost_ZDE",
+                "OverrideTermAmountBilling": null,
+                "FXRateConversionUsed": false,
+                "RoundingLevel": 2,
+                "OverrideBaseRate": null,
+                "ActualAmount": {
+                  "Amount": 54.45,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "ActualAmountBilling": {
+                  "Amount": 54.45,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "ActualBaseRate": 0.19,
+                "ActualTermAmountBilling": {
+                  "Amount": 54.45,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "RoundingMode": "tc_HALF_UP",
+                "StandardTermAmount": {
+                  "Amount": 54.45,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "StandardTermAmountBilling": {
+                  "Amount": 54.45,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "StandardAdjRate": 0.19,
+                "OverrideTermAmount": null,
+                "Basis": 286.56,
+                "StandardBaseRate": 0.19,
+                "ActualAdjRate": 0.19,
+                "CoverageCurrency": "tc_eur",
+                "DisplayName": "\n  (UNCovPartTaxCost_ZDE) {ID=6, BeanVersion=0, ActualAdjRate=0.1900, ActualAmountBilling_amt=54.45, ActualAmountBilling_cur=EUR, ActualAmount_amt=54.45, ActualAmount_cur=EUR, ActualBaseRate=0.1900, ActualTermAmountBilling_amt=54.45, ActualTermAmountBilling_cur=EUR, ActualTermAmount_amt=54.45, ActualTermAmount_cur=EUR, ArchivePartition=null, BasedOnValue=null, Basis=286.56, BranchValue=1, ChangeType=Window, ChargeGroup=Accident Insurance, ChargePattern=Taxes, Coverable=3, CreateTime=Tue Nov 08 15:44:17 CET 2016, CreateUser=3, EffectiveDate=null, ExpirationDate=null, FXRateConversionUsed=false, Fixed=6, IsTaxOverrideRequired_ZDE=null, NumDaysInRatedTerm=365, Overridable=true, OverrideAdjRate=null, OverrideAmountBilling_amt=null, OverrideAmountBilling_cur=null, OverrideAmount_amt=null, OverrideAmount_cur=null, OverrideBaseRate=null, OverrideReason=null, OverrideSource=Manual, OverrideTermAmountBilling_amt=null, OverrideTermAmountBilling_cur=null, OverrideTermAmount_amt=null, OverrideTermAmount_cur=null, PolicyFXRate=null, ProrationMethod=Day-based pro rata amount, PublicID=pc:6, RateAmountType=Tax or surcharge, RateBook=841, RoundingLevel=2, RoundingMode=ROUND_HALF_UP, StandardAdjRate=0.1900, StandardAmountBilling_amt=54.45, StandardAmountBilling_cur=EUR, StandardAmount_amt=54.45, StandardAmount_cur=EUR, StandardBaseRate=0.1900, StandardTermAmountBilling_amt=54.45, StandardTermAmountBilling_cur=EUR, StandardTermAmount_amt=54.45, StandardTermAmount_cur=EUR, SubjectToReporting=false, Subtype=UNCovPartTaxCost_ZDE, UNInsuredPerson=3, UNUnfallLine_ZDE=21, UpdateTime=Tue Nov 08 15:44:17 CET 2016, UpdateUser=3}",
+                "OverrideAmountBilling": null,
+                "RateAmountType": "tc_TaxSurcharge",
+                "SettlementCurrency": "tc_eur",
+                "StandardAmountBilling": {
+                  "Amount": 54.45,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "OverrideReason": null,
+                "StandardAmount": {
+                  "Amount": 54.45,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "OverrideAdjRate": null,
+                "ChargePattern": "tc_Taxes",
+                "ProrationMethod": "tc_ProRataByDays",
+                "OverrideAmount": null,
+                "ActualTermAmount": {
+                  "Amount": 54.45,
+                  "Currency": "tc_eur",
+                  "ODataCustomRemove": null
+                },
+                "CoverableName": "Accident Insurance",
+                "OverrideSource": "tc_manual",
+                "PublicID": "pc:6",
+                "ODataCustomRemove": null
+              }
+            ]
           },
           "RSLine": null,
           "GEBLine": null,

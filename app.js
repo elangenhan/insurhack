@@ -43,6 +43,48 @@ app.get('/api/policies', function(req, res) {
             Haftpflicht:{},
             Mobilschutz:{}
         }
+        data.Policies.forEach(function(policy) {
+            if(policy.BoundPeriods.length > 0) {
+                policy.BoundPeriods.forEach(function(boundPeriod) {
+                    var PolicyStartDate = boundPeriod.PolicyStartDate;
+                    var PolicyNumber = boundPeriod.PolicyNumber;
+                    var TermEndDate_ZDE = boundPeriod.TermEndDate_ZDE;
+                    if(boundPeriod.UNLine) {
+                        obj.Unfall.PolicyStartDate = PolicyStartDate;
+                        obj.Unfall.PolicyNumber = PolicyNumber;
+                        obj.Unfall.TermEndDate_ZDE = TermEndDate_ZDE;
+                        obj.Unfall.Cost = {
+                            ActualAmount : boundPeriod.UNLine.UNCosts[0].ActualAmount
+                        }
+                    }
+                    if(boundPeriod.RSLine) {
+                        obj.Rechtsschutz.PolicyStartDate = PolicyStartDate;
+                        obj.Rechtsschutz.PolicyNumber = PolicyNumber;
+                        obj.Rechtsschutz.TermEndDate_ZDE = TermEndDate_ZDE;
+                    }
+                    if(boundPeriod.GEBLine) {
+                        obj.Gebaeude.PolicyStartDate = PolicyStartDate;
+                        obj.Gebaeude.PolicyNumber = PolicyNumber;
+                        obj.Gebaeude.TermEndDate_ZDE = TermEndDate_ZDE;
+                    }
+                    if(boundPeriod.HRLine) {
+                        obj.Hausrat.PolicyStartDate = PolicyStartDate;
+                        obj.Hausrat.PolicyNumber = PolicyNumber;
+                        obj.Hausrat.TermEndDate_ZDE = TermEndDate_ZDE;
+                    }
+                    if(boundPeriod.HALine) {
+                        obj.Haftpflicht.PolicyStartDate = PolicyStartDate;
+                        obj.Haftpflicht.PolicyNumber = PolicyNumber;
+                        obj.Haftpflicht.TermEndDate_ZDE = TermEndDate_ZDE;
+                    }
+                    if(boundPeriod.MSLine) {
+                        obj.Mobilschutz.PolicyStartDate = PolicyStartDate;
+                        obj.Mobilschutz.PolicyNumber = PolicyNumber;
+                        obj.Mobilschutz.TermEndDate_ZDE = TermEndDate_ZDE;
+                    }
+                });
+            }
+        });
         res.json(obj);
     }, 'pc:1');
 });
