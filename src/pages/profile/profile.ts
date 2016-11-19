@@ -10,6 +10,9 @@ import { NavController } from 'ionic-angular';
 export class ProfilePage {
 
     private loggedIn;
+    private account;
+    private FirstName = "Steffen";
+    private LastName = "Billings";
 
   constructor(public navCtrl: NavController) {
       console.log(localStorage.getItem("loggedIn"));
@@ -27,6 +30,19 @@ export class ProfilePage {
   logout() {
       localStorage.setItem("loggedIn", "false");
       location.reload();
+
+  }
+
+  getAccount() {
+    let url = "http://localhost:3000/api/account";
+    this.http.get(url)
+        .subscribe(data => {
+          this.account = data.json();
+          this.FirstName = this.account.FirstName;
+          this.LastName = this.account.LastName;
+        }, error => {
+            console.log(JSON.stringify(error.json()));
+        });
 
   }
 

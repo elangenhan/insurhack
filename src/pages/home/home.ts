@@ -13,8 +13,10 @@ export class HomePage {
     private currentPolicies;
     private offerings;
     private loggedIn;
+    private account;
 
   constructor(public navCtrl: NavController, public http: Http) {
+    this.http = http;
       this.currentPolicies = [{
           name: "Unfall",
           icon: "medical"
@@ -59,10 +61,15 @@ export class HomePage {
   }
 
   getAccount() {
-    let url = "localhost:3000/api/account";
-    /*this.http.get(url).subscribe((data) => {
-      console.log(data);
-    });*/
+    let url = "http://localhost:3000/api/account";
+    this.http.get(url)
+        .subscribe(data => {
+          this.account = data.json();
+          console.log(this.account);
+        }, error => {
+            console.log(JSON.stringify(error.json()));
+        });
+
   }
 
 }
