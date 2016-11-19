@@ -6,6 +6,15 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-Chat
+<ion-content>
+    <div *ngFor="let item of messages;">
+        <div class="chat-bubble" [ngClass]="{'bubble-left': item.align == 'left', 'bubble-right': item.align == 'right'}">
+        {{item.message}}
+        </div>
+    </div>
+
+    <ion-footer class="chat-send">
+        <input [(ngModel)]="messageInput" class="message-input" type="text" placeholder="your message ..." />
+        <button (click)="sendMessage(messageInput)" class="send-button">Send</button>
+    </ion-footer>
 </ion-content>

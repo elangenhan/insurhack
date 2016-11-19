@@ -8,8 +8,29 @@ import { NavController } from 'ionic-angular';
 })
 export class ChatPage {
 
-  constructor(public navCtrl: NavController) {
+  private messages;
+  private messageInput;
 
+  constructor(public navCtrl: NavController) {
+      this.messages = [{
+          align: "left",
+          message: "Test"
+      }, {
+          align: "right",
+          message: "another test"
+      }, {
+          align: "left",
+          message: "asd"
+      }];
+  }
+
+  sendMessage(input: string) {
+      this.messages.push({
+          align: "right",
+          message: input
+      })
+
+      this.messageInput = "";
   }
 
 }
