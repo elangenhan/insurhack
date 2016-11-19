@@ -32,7 +32,6 @@ export class StartPage {
   }
 
   goToHome() {
-    localStorage.setItem("loggedIn", "true");
   	this.navCtrl.push(TabsPage, {});
   }
 }
@@ -51,6 +50,7 @@ export class ModalContentPage {
 	) {}
 
 	goToHome() {
+    localStorage.setItem("loggedIn", "true");
   	this.navCtrl.push(TabsPage, {});
   }
 

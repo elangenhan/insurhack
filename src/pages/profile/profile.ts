@@ -9,8 +9,19 @@ import { NavController } from 'ionic-angular';
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController) {
+    private loggedIn;
 
+  constructor(public navCtrl: NavController) {
+      console.log(localStorage.getItem("loggedIn"));
+    if(localStorage.getItem("loggedIn") == "true") {
+        this.loggedIn = true;
+    } else {
+        this.loggedIn = false;
+    }
+    if (this.loggedIn == false) {
+        console.log("not logged in");
+        this.logout();
+    }
   }
 
   logout() {

@@ -5,7 +5,7 @@
   </ion-fab-list>
 </ion-fab>
 <ion-content>
-	<ion-card style="margin:0;box-shadow:none;width:auto;">
+	<ion-card *ngIf="loggedIn" style="margin:0;box-shadow:none;width:auto;">
 		<img src="https://images.unsplash.com/42/QrXgXMhCSouyhU7idq7g_IMG_8402.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=e30400025b3be713cbeee329af953cb3" alt="Login Image" style="height:220px;position: absolute;">
 		<img src="https://randomuser.me/api/portraits/lego/6.jpg" class="avatar" alt="User Image">
 		<ion-card-content class="extra-padding">
