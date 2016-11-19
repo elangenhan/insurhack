@@ -11,26 +11,40 @@ export class HomePage {
 
     private currentPolicies;
     private offerings;
+    private loggedIn;
 
   constructor(public navCtrl: NavController) {
       this.currentPolicies = [{
-          name: "Life Insurance",
+          name: "Unfall",
           icon: "medical"
       }, {
-          name: "Health Care",
+          name: "Hausrat",
           icon: "medical"
       }];
 
       this.offerings = [{
-          name: "Life Insurance",
+          name: "Unfall",
           icon: "medical"
       }, {
-          name: "Health Care",
+          name: "Rechtschutz",
           icon: "medical"
       }, {
-          name: "Indemnity Insurance",
+          name: "Mobilschutz",
+          icon: "medical"
+      }, {
+          name: "Hausrat",
+          icon: "medical"
+      }, {
+          name: "Haftpflicht",
+          icon: "medical"
+      }, {
+          name: "Gebaeude",
           icon: "medical"
       }];
+
+      localStorage.setItem("loggedIn", "true");
+
+      this.loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
   }
 
   goToPage(data) {
