@@ -42,8 +42,6 @@ export class HomePage {
           icon: "medical"
       }];
 
-      localStorage.setItem("loggedIn", "true");
-
       this.loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
   }
 
