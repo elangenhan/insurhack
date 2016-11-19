@@ -6,11 +6,53 @@
 
 <ion-content padding>
 
-    <ion-list>
-        <ion-item>
-            <ion-label>Preis KPI</ion-label>
-            <ion-range min="0" max="5" step="1" snaps="true" color="secondary" [(ngModel)]="kpi1" disabled="true"></ion-range>
-        </ion-item>
-    </ion-list>
+    <ion-card>
+        <ion-card-header>
+            <ion-icon name="medical" item-left></ion-icon>
+            Flags
+        </ion-card-header>
+
+        <ion-list>
+            <ion-item>
+                <ion-label>Fahrrad</ion-label>
+                <ion-toggle checked="true"></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>Motorrad</ion-label>
+                <ion-toggle checked="true"></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>Auto</ion-label>
+                <ion-toggle checked="true"></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>Flag</ion-label>
+                <ion-toggle checked="true"></ion-toggle>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-icon name="medical" item-left></ion-icon>
+            KPIs
+        </ion-card-header>
+
+        <ion-list>
+            <ion-item>
+                <ion-label>KPI <img src="assets/{{kpi1}}.jpg" /></ion-label>
+                <ion-range min="1" max="5" step="1" snaps="true" color="secondary" [(ngModel)]="kpi1"></ion-range>
+            </ion-item>
+            <ion-item>
+                <ion-label>KPI <img src="assets/{{kpi2}}.jpg" /></ion-label>
+                <ion-range min="1" max="5" step="1" snaps="true" color="secondary" [(ngModel)]="kpi2"></ion-range>
+            </ion-item>
+            <ion-item>
+                <ion-label>KPI <img src="assets/{{kpi3}}.jpg" /></ion-label>
+                <ion-range min="1" max="5" step="1" snaps="true" color="secondary" [(ngModel)]="kpi3"></ion-range>
+            </ion-item>
+        </ion-list>
+    </ion-card>
 
 </ion-content>
+
