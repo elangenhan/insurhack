@@ -13,7 +13,7 @@ export class HomePage {
     private currentPolicies;
     private offerings;
     private loggedIn;
-    private account;
+    private policies;
 
   constructor(public navCtrl: NavController, public policyService: PolicyService) {
       this.currentPolicies = [{
@@ -59,7 +59,8 @@ export class HomePage {
   loadPolicies() {
     this.policyService.load()
     .then(data => {
-      this.account = data;
+      this.policies = data;
+      console.log(this.policies);
     });
   }
 
