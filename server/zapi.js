@@ -39,24 +39,32 @@ function get_object(d, mock_file) {
 exports.get_policies = function(callback, id) {
     // https://api.insurhack.com/apis/gi/1/Account_Set('pc:1')?$expand=Policies($expand=BoundPeriods($expand=UNLine,GEBLine,RSLine,MSLine,HALine,HRLine))
     var mockfile = "policies.json";
-    var path = "/apis/gi/1/Account_Set('" + id + "')?$expand=Policies($expand=BoundPeriods($expand=UNLine($expand=UNCosts,UNInsuredPersons),GEBLine,RSLine,MSLine,HALine,HRLine))";
+    var path = "/apis/gi/1/Account_Set('" + id + "')?$expand=Policies($expand=BoundPeriods($expand=UNLine($expand=UNCosts,UNInsuredPersons($expand=UNNamedInsuredRole,CoverageParts($expand=Coverages))),GEBLine,RSLine,MSLine,HALine,HRLine))";
 
     var opt = options_gi;
     opt.path = path;
+
+    var body = null;
+
     var req = https.request(options_gi, (res) => {
         console.log('statusCode:', res.statusCode);
         console.log('headers:', res.headers);
 
         res.on('data', (d) => {
             process.stdout.write(d);
-            var obj = get_object(d,mockfile);
+            if(!body)
+                body = d;
+            else
+                body += d;
+            
+        }).on('end', function() {
+            var obj = get_object(body, mockfile);
             callback(obj);
         });
     })
     req.end();
     req.on('error', (e) => {
         console.error(e);
-        callback(e);
         var data = get_mocked(mockfile);
         data.error = e;
         callback(data);

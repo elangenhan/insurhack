@@ -18,7 +18,7 @@ var httpsoptions = {
 app.use(express.static('www'));
 
 app.post('/api/chat', function(req, res) {
-    var message = req.body.message;
+    var message = req.body.message ? req.body.message : {input: {'text': 'Can you help me please?'}, context: {}};
     var response = chat.message(function(response) {
         res.json(response);
     }, message);
@@ -58,7 +58,7 @@ app.get('/api/policies', function(req, res) {
                         obj.Unfall.Cost = {
                             ActualAmount : boundPeriod.UNLine.UNCosts[0].ActualAmount
                         }
-                        obj.Unfall.InsuredPersons = boundPeriod.UNLine.InsuredPersons;
+                        obj.Unfall.InsuredPersons = boundPeriod.UNLine.UNInsuredPersons;
                     }
                     if(boundPeriod.RSLine) {
                         obj.Rechtsschutz.PolicyStartDate = PolicyStartDate;
