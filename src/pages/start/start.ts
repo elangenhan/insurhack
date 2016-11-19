@@ -15,7 +15,12 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class StartPage {
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {}
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+    let login = JSON.parse(localStorage.getItem("loggedIn"));
+    if(login) {
+      this.navCtrl.push(TabsPage, {});
+    }
+  }
 
   ionViewDidLoad() {
     console.log('Hello StartPage Page');
@@ -27,6 +32,7 @@ export class StartPage {
   }
 
   goToHome() {
+    localStorage.setItem("loggedIn", "true");
   	this.navCtrl.push(TabsPage, {});
   }
 }
