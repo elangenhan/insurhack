@@ -66,7 +66,7 @@ platforms/
 plugins/
 plugins/android.json
 plugins/ios.json
-www/
+#www/
 $RECYCLE.BIN/
 
 .DS_Store
