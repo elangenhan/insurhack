@@ -15,7 +15,6 @@ export class AccountService {
 
   constructor(public http: Http) {
 
-
   }
 
   load() {

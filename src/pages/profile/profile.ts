@@ -13,8 +13,6 @@ export class ProfilePage {
 
     private loggedIn;
     private account = {};
-    @Input() private FirstName;
-    private LastName = "Mustermann";
 
   constructor(public navCtrl: NavController, public peopleService: AccountService) {
     console.log(localStorage.getItem("loggedIn"));

@@ -5,7 +5,8 @@ import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [PolicyService]
 })
 export class HomePage {
 
@@ -15,7 +16,6 @@ export class HomePage {
     private account;
 
   constructor(public navCtrl: NavController, public policyService: PolicyService) {
-    this.http = http;
       this.currentPolicies = [{
           name: "Unfall",
           icon: "medical"
@@ -46,6 +46,7 @@ export class HomePage {
 
       this.loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
 
+      this.policyService = policyService;
       this.loadPolicies();
   }
 
