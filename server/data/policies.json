@@ -1,0 +1,84 @@
+{
+  "@odata.context": "$metadata#Account_Set/$entity",
+  "AccountNumber": "10000000024",
+  "PrimaryLanguage": "tc_de",
+  "PublicID": "pc:1",
+  "ODataCustomRemove": null,
+  "Policies": [
+    {
+      "LastPolicyChangeDate_ZDE": "2016-11-08",
+      "PriorPremiums": {
+        "Amount": 0,
+        "Currency": "tc_eur",
+        "ODataCustomRemove": null
+      },
+      "ProductCode": "NPLPL_NewPersonalProduct",
+      "PackageRisk": null,
+      "OriginalEffectiveDate": "2016-08-01",
+      "PriorTotalIncurred": null,
+      "CreateTime": "2016-11-08",
+      "PrimaryLocale": "tc_en_US",
+      "PrimaryLanguage": "tc_de",
+      "PublicID": "pc:1",
+      "ODataCustomRemove": null,
+      "BoundPeriods": [
+        {
+          "UNLineExists": true,
+          "TermEndDate_ZDE": "2018-08-01",
+          "CooperationKeyValue": null,
+          "GEBLineExists": false,
+          "UWCompanyCode": "tc_21",
+          "PolicyStartDate": "2016-08-01",
+          "DepositAmount": null,
+          "TermType": "tc_Annual",
+          "PolicyNumber": "900000000012",
+          "RSLineExists": false,
+          "MSLineExists": false,
+          "HALineExists": false,
+          "HRLineExists": false,
+          "Status": "tc_Bound",
+          "CreateTime": "2016-11-08",
+          "UWIssuesActiveOnly": [],
+          "PublicID": "pc:1",
+          "ODataCustomRemove": null
+        }
+      ]
+    },
+    {
+      "LastPolicyChangeDate_ZDE": null,
+      "PriorPremiums": {
+        "Amount": 0,
+        "Currency": "tc_eur",
+        "ODataCustomRemove": null
+      },
+      "ProductCode": "NPLPL_NewPersonalProduct",
+      "PackageRisk": null,
+      "OriginalEffectiveDate": null,
+      "PriorTotalIncurred": null,
+      "CreateTime": "2016-11-18",
+      "PrimaryLocale": "tc_en_US",
+      "PrimaryLanguage": "tc_de",
+      "PublicID": "pc:201",
+      "ODataCustomRemove": null,
+      "BoundPeriods": []
+    },
+    {
+      "LastPolicyChangeDate_ZDE": null,
+      "PriorPremiums": {
+        "Amount": 0,
+        "Currency": "tc_eur",
+        "ODataCustomRemove": null
+      },
+      "ProductCode": "NPLPL_NewPersonalProduct",
+      "PackageRisk": null,
+      "OriginalEffectiveDate": null,
+      "PriorTotalIncurred": null,
+      "CreateTime": "2016-11-19",
+      "PrimaryLocale": "tc_en_US",
+      "PrimaryLanguage": "tc_de",
+      "PublicID": "pc:211",
+      "ODataCustomRemove": null,
+      "BoundPeriods": []
+    }
+  ]
+}
