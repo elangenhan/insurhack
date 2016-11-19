@@ -134,16 +134,19 @@ app.get('/api/account', function(req, res) {
     }, 'pc:1');
 });
 
+
+var port = process.env.PORT || 3000;
+
 if(httpsoptions.key && httpsoptions.cert) {
     var https = require('https');
-    https.createServer(options, app).listen(3000, function () {
-        console.log('Started!');
+    https.createServer(options, app).listen(port, function () {
+        console.log('Running, port: ' + port);
     });
 }
 
 else {
     var http = require('http');
-    http.createServer(app).listen(3000, function () {
-        console.log('Started!');
+    http.createServer(app).listen(port, function () {
+        console.log('Running, port: ' + port);
     });
 }
