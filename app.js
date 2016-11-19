@@ -4,11 +4,18 @@ var app = express();
 var http = require('http');
 var https = require('https');
 var bodyParser = require('body-parser');
+var watson = require('watson-developer-cloud');
+var conversation = watson.conversation({
+  username: '4b7e9e47-b619-46ac-abf9-c9e72669867a',
+  password: 'gczH7fC2ZH7q',
+  version: 'v1',
+  version_date: '2016-09-20'
+});
 app.use(bodyParser());
 
 var zapi = require('./server/zapi.js');
 var mapi = require('./server/mapi.js');
-var chat = require('./server/chat.js');
+//var chat = require('./server/chat.js');
 
 var httpsoptions = {
    key  : null, //fs.readFileSync('server.key'),
@@ -18,10 +25,17 @@ var httpsoptions = {
 app.use(express.static('www'));
 
 app.post('/api/chat', function(req, res) {
-    var message = req.body.message ? req.body.message : {input: {'text': 'Can you help me please?'}, context: {}};
-    var response = chat.message(function(response) {
-        res.json(response);
-    }, message);
+    conversation.message({
+      workspace_id: '61970c56-80d8-48eb-838b-6fdd890f85b6',
+      input: {'text': message},
+      context: req.body.context
+    },  function(err, response) {
+      if (err)
+        console.log('error:', err);
+      else
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(response));
+    });
 });
 
 /*
@@ -41,7 +55,7 @@ app.all('/', function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next();
  });
- 
+
 app.get('/api/policies', function(req, res) {
     zapi.get_policies(function(data) {
         var obj = {
