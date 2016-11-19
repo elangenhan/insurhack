@@ -25,13 +25,25 @@ app.post('/api/chat', function(req, res) {
 /*
 ablaufdatum, versicherungsdatum, zahlweise
 {
-    PolicyType:"",
-
+    Unfall:{},
+    Rechtsschutz:{},
+    Gebaeude:{},
+    Hausrat:{},
+    Haftpflicht:{},
+    Mobilschutz:{}
 }
 */
 app.get('/api/policies', function(req, res) {
     zapi.get_policies(function(data) {
-        res.json(data);
+        var obj = {
+            Unfall:{},
+            Rechtsschutz:{},
+            Gebaeude:{},
+            Hausrat:{},
+            Haftpflicht:{},
+            Mobilschutz:{}
+        }
+        res.json(obj);
     }, 'pc:1');
 });
 
@@ -57,14 +69,14 @@ app.get('/api/policies', function(req, res) {
 app.get('/api/account', function(req, res) {
     zapi.get_account(function(data) {
         var obj = {
-            Email: data.EmailAddress1,
-            Phone: data.PrimaryPhone,
-            LastName: data.LastName,
-            FirstName: data.FirstName,
-            DateOfBirth: data.DateOfBirth,
-            Gender: data.Gender,
-            AccountNumber:AccountNumber,
-            Address : data.PrimaryAddress
+            Email: data.AccountHolderContact.EmailAddress1,
+            Phone: data.AccountHolderContact.PrimaryPhone,
+            LastName: data.AccountHolderContact.LastName,
+            FirstName: data.AccountHolderContact.FirstName,
+            DateOfBirth: data.AccountHolderContact.DateOfBirth,
+            Gender: data.AccountHolderContact.Gender,
+            AccountNumber: data.AccountNumber,
+            Address : data.AccountHolderContact.PrimaryAddress
         }
         res.json(obj);
     }, 'pc:1');
