@@ -11,18 +11,22 @@ export class ChatPage {
 
   private messages = [];
   private messageInput;
-  private context = {};
+  private context;
 
   constructor(public navCtrl: NavController, public chatService: ChatService) {
+    this.context = {};
       this.init();
+    }
   }
 
   init() {
-    this.chatService.sendMessage({
-        workspace_id: '61970c56-80d8-48eb-838b-6fdd890f85b6',
-        input: {'text': "Hello"},
+    let input = "Hello";
+    if(input != "" && input != undefined) {
+      this.chatService.sendMessage({
+        message: input,
         context: this.context
       }).then(data => {
+        console.log(data);
         this.context = data.context;
         let tmp = data.output.text;
         for (let j in tmp) {
@@ -32,13 +36,15 @@ export class ChatPage {
           })
         }
       })
+    }
+
+      this.messageInput = "";
   }
 
   sendMessage(input: string) {
     if(input != "" && input != undefined) {
       this.chatService.sendMessage({
-        workspace_id: '61970c56-80d8-48eb-838b-6fdd890f85b6',
-        input: {'text': input},
+        message: input,
         context: this.context
       }).then(data => {
         console.log(data);
