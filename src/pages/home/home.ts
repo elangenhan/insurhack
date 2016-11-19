@@ -55,14 +55,14 @@ export class HomePage {
   }
 
   getPolicies() {
-    let api = "localhost:3000/api/policies";
+    let url = "localhost:3000/api/policies";
   }
 
   getAccount() {
-    let api = "localhost:3000/api/account";
-    this.http.get(api).subscribe(data => {
+    let url = "localhost:3000/api/account";
+    /*this.http.get(url).subscribe((data) => {
       console.log(data);
-    });
+    });*/
   }
 
 }
