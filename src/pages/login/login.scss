@@ -1,0 +1,63 @@
+page-login {
+	.ion-boxify {
+		height: auto;
+	}
+	// this is for welcome screen
+	.boxify-container {
+		height: calc(100vh - 44px - 50px);
+		.normal {
+			font-size: 1em !important;
+		}
+		.large {
+			* {
+				font-size: 1.3em;
+			}
+		}
+		.larger {
+			* {
+				font-size: 2em;
+			}
+		}
+		.x-large {
+			* {
+				font-size: 3em;
+			}
+		}
+		.row {
+			* {
+				color: #fff;
+				line-height: 0.8em;
+			}
+			height:34%;
+			.col {
+				display: flex;
+				justify-content: left;
+				align-items: center;
+				padding-left: 10%;
+			}
+			.col-center {
+				justify-content: center;
+			}
+		.welcome-text {
+				// padding: 2em 2em;
+			}
+			.boxify-action {
+			}
+			&.welcome {
+				@extend .large;
+				background-color: $positive;
+				//box-shadow: inset 0px 5px 0px -0px rgba(255,122,51,1);
+			}
+			&.chat {
+				// padding: 15% 5%;
+				@extend .larger;
+				@extend .dark-blue-5;
+			}
+			&.call {
+				// padding: 15% 5%;
+				@extend .larger;
+				@extend .darker-blue-10;
+			}
+		}
+	}
+}
