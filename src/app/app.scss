@@ -14,3 +14,11 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+$positive: rgba(102, 163, 209, 1);
+
+.dark-blue-5 {
+	background-color: darken($positive, 5%);
+}
+.darker-blue-10 {
+	background-color: darken($positive, 10%);
+}

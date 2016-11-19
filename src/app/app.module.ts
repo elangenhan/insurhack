@@ -6,6 +6,9 @@ import { ProfilePage } from '../pages/profile/profile';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DetailPage } from '../pages/detail/detail';
+import { LoginPage } from '../pages/login/login';
+import { StartPage } from '../pages/start/start';
+import { ModalContentPage } from '../pages/start/start';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,11 @@ import { DetailPage } from '../pages/detail/detail';
     ProfilePage,
     HomePage,
     TabsPage,
-    DetailPage
+    DetailPage,
+    LoginPage,
+    StartPage,
+    ModalContentPage,
+    TabsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -26,7 +33,11 @@ import { DetailPage } from '../pages/detail/detail';
     ProfilePage,
     HomePage,
     TabsPage,
-    DetailPage
+    DetailPage,
+    LoginPage,
+    StartPage,
+    ModalContentPage,
+    TabsPage
   ],
   providers: []
 })
