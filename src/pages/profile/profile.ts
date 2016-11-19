@@ -1,23 +1,24 @@
 import { Component, Input } from '@angular/core';
 import { StartPage } from '../start/start';
-import { Http } from '@angular/http';
+import {AccountService} from '../../providers/account-service';
 
 import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-profile',
-  templateUrl: 'profile.html'
+  templateUrl: 'profile.html',
+  providers: [AccountService]
 })
 export class ProfilePage {
 
     private loggedIn;
-    private account;
+    private account = {};
     @Input() private FirstName;
     private LastName = "Mustermann";
 
-  constructor(public navCtrl: NavController, public http: Http) {
-    this.http = http;
-      console.log(localStorage.getItem("loggedIn"));
+  constructor(public navCtrl: NavController, public peopleService: AccountService) {
+    console.log(localStorage.getItem("loggedIn"));
+    
     if(localStorage.getItem("loggedIn") == "true") {
         this.loggedIn = true;
     } else {
@@ -27,6 +28,8 @@ export class ProfilePage {
         console.log("not logged in");
         this.logout();
     }
+
+    this.loadAccount();
   }
 
   logout() {
@@ -35,18 +38,11 @@ export class ProfilePage {
 
   }
 
-  getAccount() {
-    let url = "http://localhost:3000/api/account";
-    this.http.get(url)
-        .subscribe(data => {
-          this.account = data.json();
-          this.FirstName = this.account.FirstName;
-          this.LastName = this.account.LastName;
-          console.log(this);
-        }, error => {
-            console.log(JSON.stringify(error.json()));
-        });
-
+  loadAccount() {
+    this.peopleService.load()
+    .then(data => {
+      this.account = data;
+    });
   }
 
 }

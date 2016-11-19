@@ -19,20 +19,20 @@
 		      <ion-label>
 		      	Fullname
 		      </ion-label>
-		      <ion-input placeholder="Ricardo Sanchez" [(ngModel)]="FirstName" type="text"></ion-input>
+		      <ion-input placeholder="Ricardo Sanchez" [value]="account.FirstName+' '+account.LastName" type="text"></ion-input>
 		    </ion-item>
 
 		    <ion-item>
 		      <ion-label>
 		      	Birthdate
 		      </ion-label>
-		      <ion-datetime displayFormat="DD.MM.YYYY"></ion-datetime>
+		      <ion-datetime [(ngModel)]="account.DateOfBirth"></ion-datetime>
 		    </ion-item>
 
 		    <ion-item>
-		      <ion-select>
-		      	<ion-option>Male</ion-option>
-		      	<ion-option>Female</ion-option>
+		      <ion-select [(ngModel)]="account.gender">
+		      	<ion-option value="male">male</ion-option>
+		      	<ion-option value="female">female</ion-option>
 		      </ion-select>
 		      <ion-label>
 		        Gender
