@@ -25,6 +25,7 @@ var httpsoptions = {
 app.use(express.static('www'));
 
 app.post('/api/chat', function(req, res) {
+		var message = req.body.message;
     conversation.message({
       workspace_id: '61970c56-80d8-48eb-838b-6fdd890f85b6',
       input: {'text': message},
