@@ -11,7 +11,7 @@ export class ChatPage {
 
   private messages = [];
   private messageInput;
-  private context;
+  private context = {};
 
   constructor(public navCtrl: NavController, public chatService: ChatService) {
     this.init();
@@ -20,8 +20,9 @@ export class ChatPage {
   init() {
       this.chatService.sendMessage({
         message: "Hello",
-        context: ""
+        context: {}
       }).then( (data: any) => {
+        console.log(data);
         this.context = data.context;
         let tmp = data.output.text;
         for (let j in tmp) {
@@ -39,6 +40,7 @@ export class ChatPage {
         message: input,
         context: this.context
       }).then((data: any) => {
+        console.log(data);
         this.context = data.context;
         let tmp = data.output.text;
         for (let j in tmp) {
