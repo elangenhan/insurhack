@@ -60,4 +60,44 @@ page-login {
 			}
 		}
 	}
+
+	.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+
+  .card-icon {
+  	position: absolute;
+  	font-size: 5em;
+  	bottom: -3%;
+  	right: 8%;
+  	color: white;
+  }
+
+  .normalize {
+  	text-align: left;
+  	box-shadow: none;
+  	padding: 1em 0;
+  }
+
+}
 }
