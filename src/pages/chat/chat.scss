@@ -1,3 +1,43 @@
 page-chat {
+    $highlight-color: RGBA(61, 129, 242, 1.00);
 
+    .messageWrapper {
+        overflow: scroll;
+        margin-bottom: 50px;
+
+        .chat-bubble {
+            padding: 10px;
+            background-color: $highlight-color;
+            color: white;
+            border-radius: 20px;
+        }
+
+        .bubble-left {
+            margin: 10px 80px 10px 10px;
+        }
+
+        .bubble-right {
+            margin: 10px 10px 10px 80px;
+        }
+    }
+
+    .chat-send {
+        display: flex;
+        position: fixed;
+        bottom: 50px;
+
+        .message-input {
+            flex: 1 auto;
+            height: 50px;
+            padding: 5px;
+            background-color: RGBA(248, 248, 248, 1.00);
+            border: none;
+        }
+        .send-button {
+            height: 50px;
+            width: 50px;
+            background-color: $highlight-color;
+            color: white;
+        }
+    }
 }
