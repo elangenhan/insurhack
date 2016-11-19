@@ -6,6 +6,8 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
+import { StartPage } from '../pages/start/start';
+import { ModalContentPage } from '../pages/start/start';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { LoginPage } from '../pages/login/login';
     ContactPage,
     HomePage,
     LoginPage,
+    StartPage,
+    ModalContentPage,
     TabsPage
   ],
   imports: [
@@ -26,6 +30,8 @@ import { LoginPage } from '../pages/login/login';
     ContactPage,
     HomePage,
     LoginPage,
+    StartPage,
+    ModalContentPage,
     TabsPage
   ],
   providers: []
