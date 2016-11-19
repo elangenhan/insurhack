@@ -22,15 +22,51 @@ app.post('/api/chat', function(req, res) {
     }, input);
 });
 
+/*
+ablaufdatum, versicherungsdatum, zahlweise
+{
+    PolicyType:"",
+
+}
+*/
 app.get('/api/policies', function(req, res) {
     zapi.get_policies(function(data) {
         res.json(data);
     }, 'pc:1');
 });
 
+
+/*
+{
+    Email:"",
+    Phone:"",
+    LastName:"",
+    FirstName:"",
+    DateOfBirth:"",
+    Gender:"",
+    InsuranceNumber:0,
+    Address : {
+        Street:"",
+        StreetNumber:"",
+        ZIP:"",
+        City:"",
+        Country:""
+    }
+}
+*/
 app.get('/api/account', function(req, res) {
     zapi.get_account(function(data) {
-        res.json(data);
+        var obj = {
+            Email: data.EmailAddress1,
+            Phone: data.PrimaryPhone,
+            LastName: data.LastName,
+            FirstName: data.FirstName,
+            DateOfBirth: data.DateOfBirth,
+            Gender: data.Gender,
+            AccountNumber:AccountNumber,
+            Address : data.PrimaryAddress
+        }
+        res.json(obj);
     }, 'pc:1');
 });
 

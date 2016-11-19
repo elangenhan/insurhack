@@ -37,9 +37,9 @@ function get_object(d, mock_file) {
     }
 }
 exports.get_policies = function(callback, id) {
-    // Account_Set('pc:1')?$expand=Policies($expand=BoundPeriods)
+    // https://api.insurhack.com/apis/gi/1/Account_Set('pc:1')?$expand=Policies($expand=BoundPeriods($expand=UNLine,GEBLine,RSLine,MSLine,HALine,HRLine))
     var mockfile = "policies.json.json";
-    var path = "/apis/gi/1/Account_Set('" + id + "')?$expand=Policies($expand=BoundPeriods)";
+    var path = "/apis/gi/1/Account_Set('" + id + "')?$expand=Policies($expand=BoundPeriods($expand=UNLine,GEBLine,RSLine,MSLine,HALine,HRLine))";
 
     var opt = options_gi;
     opt.path = path;
@@ -66,7 +66,7 @@ exports.get_policies = function(callback, id) {
 exports.get_account = function(callback, id) {
     // /Account_Set('pc:1')?$expand=AccountHolderContact
     var mockfile = "account.json";
-    var path = "/apis/gi/1/Account_Set('" + id + "')?$expand=AccountHolderContact";
+    var path = "/apis/gi/1/Account_Set('" + id + "')?$expand=AccountHolderContact($expand=PrimaryAddress)";
 
     var opt = options_gi;
     opt.path = path;

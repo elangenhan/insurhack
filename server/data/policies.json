@@ -40,7 +40,23 @@
           "CreateTime": "2016-11-08",
           "UWIssuesActiveOnly": [],
           "PublicID": "pc:1",
-          "ODataCustomRemove": null
+          "ODataCustomRemove": null,
+          "UNLine": {
+            "QuestionSets": [],
+            "ProductReferenceDate_ZDE": "2000-01-01",
+            "DisplayName": "Accident Line",
+            "ExpirationDate": "2017-08-01",
+            "MinimumPremiumAmount": null,
+            "OfficialIDStates": [],
+            "PatternCode": "UNLine",
+            "PublicID": "pc:21",
+            "ODataCustomRemove": null
+          },
+          "RSLine": null,
+          "GEBLine": null,
+          "HRLine": null,
+          "HALine": null,
+          "MSLine": null
         }
       ]
     },
@@ -77,6 +93,42 @@
       "PrimaryLocale": "tc_en_US",
       "PrimaryLanguage": "tc_de",
       "PublicID": "pc:211",
+      "ODataCustomRemove": null,
+      "BoundPeriods": []
+    },
+    {
+      "LastPolicyChangeDate_ZDE": null,
+      "PriorPremiums": {
+        "Amount": 0,
+        "Currency": "tc_eur",
+        "ODataCustomRemove": null
+      },
+      "ProductCode": "NPLPL_NewPersonalProduct",
+      "PackageRisk": null,
+      "OriginalEffectiveDate": null,
+      "PriorTotalIncurred": null,
+      "CreateTime": "2016-11-19",
+      "PrimaryLocale": "tc_en_US",
+      "PrimaryLanguage": "tc_de",
+      "PublicID": "pc:401",
+      "ODataCustomRemove": null,
+      "BoundPeriods": []
+    },
+    {
+      "LastPolicyChangeDate_ZDE": null,
+      "PriorPremiums": {
+        "Amount": 0,
+        "Currency": "tc_eur",
+        "ODataCustomRemove": null
+      },
+      "ProductCode": "NPLPL_NewPersonalProduct",
+      "PackageRisk": null,
+      "OriginalEffectiveDate": null,
+      "PriorTotalIncurred": null,
+      "CreateTime": "2016-11-19",
+      "PrimaryLocale": "tc_en_US",
+      "PrimaryLanguage": "tc_de",
+      "PublicID": "pc:461",
       "ODataCustomRemove": null,
       "BoundPeriods": []
     }
