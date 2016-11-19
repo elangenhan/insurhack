@@ -14,9 +14,9 @@ export class ProfilePage {
   }
 
   logout() {
-      console.log("logout");
       localStorage.setItem("loggedIn", "false");
       location.reload();
+
   }
 
 }
