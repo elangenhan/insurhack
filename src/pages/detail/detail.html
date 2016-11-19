@@ -8,8 +8,8 @@
 
     <ion-list>
         <ion-item>
-            <ion-label>Cost range: {{costRange.lower}} to {{costRange.upper}}</ion-label>
-            <ion-range dualKnobs="true" [(ngModel)]="costRange" min="0" max="500" step="10" snaps="true"></ion-range>
+            <ion-label>Preis / m^2</ion-label>
+            <ion-range min="0" max="5" step="1" snaps="true" color="secondary" [(ngModel)]="kpi1"></ion-range>
         </ion-item>
     </ion-list>
 

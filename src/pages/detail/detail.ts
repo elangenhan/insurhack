@@ -8,14 +8,11 @@ import { NavController, NavParams } from 'ionic-angular';
 export class DetailPage {
 
     private data;
-    private costRange;
+    private kpi1;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
       this.data = this.navParams.get('data');
-      this.costRange = {
-          lower: 0,
-          upper: 200
-      }
+      this.kpi1 = 4;
   }
 
   log(data) {
