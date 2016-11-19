@@ -32,11 +32,13 @@ app.post('/api/chat', function(req, res) {
       input: {'text': message},
       context: req.body.context
     },  function(err, response) {
-      if (err)
+      if (err) {
         console.log('error:', err);
-      else
+        }
+      else {
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify(response));
+        }
     });
 });
 
