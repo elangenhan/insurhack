@@ -2,7 +2,9 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 var http = require('http');
-var http = require('https');
+var https = require('https');
+var bodyParser = require('body-parser');
+app.use(bodyParser());
 
 var zapi = require('./server/zapi.js');
 var mapi = require('./server/mapi.js');
@@ -16,10 +18,10 @@ var httpsoptions = {
 app.use(express.static('www'));
 
 app.post('/api/chat', function(req, res) {
-    var input;
+    var message = req.body.message ? req.body.message : {input: {'text': 'Can you help me please?'}, context: {}};
     var response = chat.message(function(response) {
         res.json(response);
-    }, input);
+    }, message);
 });
 
 /*
@@ -63,6 +65,7 @@ app.get('/api/policies', function(req, res) {
                         obj.Unfall.Cost = {
                             ActualAmount : boundPeriod.UNLine.UNCosts[0].ActualAmount
                         }
+                        obj.Unfall.InsuredPersons = boundPeriod.UNLine.UNInsuredPersons;
                     }
                     if(boundPeriod.RSLine) {
                         obj.Rechtsschutz.PolicyStartDate = PolicyStartDate;
