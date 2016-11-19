@@ -76,8 +76,13 @@ exports.get_account = function(callback, id) {
 
         res.on('data', (d) => {
             process.stdout.write(d);
-            var obj = get_object(d, mockfile);
-            callback(obj);
+            var data = get_object(d, mockfile);
+            if(!data.AccountHolderContact.EmailAddress1 || !data.AccountHolderContact.PrimaryPhone || !data.AccountHolderContact.LastName
+                || !data.AccountHolderContact.FirstName || !data.AccountHolderContact.DateOfBirth ||!data.AccountHolderContact.Gender
+                || !data.AccountNumber || !data.AccountHolderContact.PrimaryAddress)
+                return callback(get_mocked(mockfile));
+            else
+                callback(obj);
         });
     })
     req.end();
