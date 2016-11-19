@@ -11,12 +11,10 @@ export class ChatPage {
 
   private messages = [];
   private messageInput;
-  private context;
+  private context = undefined;
 
   constructor(public navCtrl: NavController, public chatService: ChatService) {
-    this.context = {};
-      this.init();
-    }
+    this.init();
   }
 
   init() {
@@ -24,7 +22,7 @@ export class ChatPage {
     if(input != "" && input != undefined) {
       this.chatService.sendMessage({
         message: input,
-        context: this.context
+        context: ""
       }).then(data => {
         console.log(data);
         this.context = data.context;
