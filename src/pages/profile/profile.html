@@ -1,6 +1,12 @@
+<ion-fab left top>
+  <button ion-fab mini><ion-icon name="exit"></ion-icon></button>
+  <ion-fab-list>
+    <button ion-fab><ion-icon name="exit"></ion-icon></button><span ion-text color="light">Logout?</span>
+  </ion-fab-list>
+</ion-fab>
 <ion-content>
 	<ion-card style="margin:0;box-shadow:none;width:auto;">
-		<img src="https://images.unsplash.com/42/QrXgXMhCSouyhU7idq7g_IMG_8402.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=e30400025b3be713cbeee329af953cb3" alt="Login Image" style="height:220px;position: fixed;">
+		<img src="https://images.unsplash.com/42/QrXgXMhCSouyhU7idq7g_IMG_8402.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=e30400025b3be713cbeee329af953cb3" alt="Login Image" style="height:220px;position: absolute;">
 		<img src="https://randomuser.me/api/portraits/lego/6.jpg" class="avatar" alt="User Image">
 		<ion-card-content class="extra-padding">
 			<h1 text-center>Ricardo Sanchez</h1>
@@ -9,34 +15,28 @@
 		      Personal Data
 		    </ion-list-header>
 
-		    <ion-item>
-		      <ion-icon name='planet' item-left></ion-icon>
-		      Astronomy
-		      <ion-note item-right>
-		      To the moon
-		      </ion-note>
-		    </ion-item>
-
-		    <ion-item>
-		      <ion-toggle checked="false"></ion-toggle>
+				<ion-item>
 		      <ion-label>
-		        Muggle Studies
+		      	Fullname
 		      </ion-label>
-		      <ion-icon name='body' item-left></ion-icon>
+		      <ion-input placeholder="Ricardo Sanchez" type="text"></ion-input>
 		    </ion-item>
 
 		    <ion-item>
-		      <ion-icon name='leaf' item-left></ion-icon>
-		      Herbology
-		      <ion-icon name='rose' item-right color="secondary"></ion-icon>
+		      <ion-label>
+		      	Birthdate
+		      </ion-label>
+		      <ion-datetime displayFormat="DD.MM.YYYY"></ion-datetime>
 		    </ion-item>
 
 		    <ion-item>
-		      <ion-icon name='flask' item-left></ion-icon>
-		      Potions
-		      <ion-note item-right>
-		      Poisonous
-		      </ion-note>
+		      <ion-select>
+		      	<ion-option>Male</ion-option>
+		      	<ion-option>Female</ion-option>
+		      </ion-select>
+		      <ion-label>
+		        Gender
+		      </ion-label>
 		    </ion-item>
 		  </ion-list>
 		  <ion-list no-border style="padding-top:1em;">
