@@ -14,10 +14,7 @@ export class HomePage {
     private offerings;
     private loggedIn;
     private policies;
-    private model = {
-    	currentPolicies: this.currentPolicies,
-    	offerings: this.offerings
-    }
+    private model: any;
 
   constructor(public navCtrl: NavController, public policyService: PolicyService) {
       this.currentPolicies = [{
@@ -52,6 +49,7 @@ export class HomePage {
 
       this.policyService = policyService;
       this.loadPolicies();
+      this.model = "offerings";
   }
 
   goToPage(data, policies) {
