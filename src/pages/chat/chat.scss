@@ -1,9 +1,6 @@
 page-chat {
     $highlight-color: RGBA(61, 129, 242, 1.00);
 
-    .messageWrapper {
-        overflow: scroll;
-        margin-bottom: 50px;
 
         .chat-bubble {
             padding: 10px;
@@ -20,7 +17,6 @@ page-chat {
         .bubble-right {
             margin: 10px 10px 10px 80px;
         }
-    }
 
     .chat-send {
         display: flex;

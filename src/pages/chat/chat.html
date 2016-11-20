@@ -7,16 +7,13 @@
 </ion-header>
 
 <ion-content>
-    <div class="messageWrapper">
         <div *ngFor="let item of messages;">
             <div class="chat-bubble" [ngClass]="{'bubble-left': item.align == 'left', 'bubble-right': item.align == 'right'}">
             {{item.message}}
             </div>
         </div>
-    </div>
-
-    <ion-footer class="chat-send">
+</ion-content>
+<ion-footer class="chat-send">
         <input [(ngModel)]="messageInput" class="message-input" type="text" placeholder="your message ..." />
         <button (click)="sendMessage(messageInput)" class="send-button"><ion-icon name="send" style="font-size: 30px;"></ion-icon></button>
     </ion-footer>
-</ion-content>
