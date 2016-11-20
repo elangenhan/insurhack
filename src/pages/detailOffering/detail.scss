@@ -1,0 +1,13 @@
+page-detail {
+    ion-label {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        
+        img {
+            height: 50px;
+            width: auto;
+        }
+    }
+}

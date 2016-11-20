@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DetailPage } from '../detail/detail';
+import { DetailOfferingPage } from '../detail/detailOffering';
 import { PolicyService} from '../../providers/policy-service';
 import { NavController } from 'ionic-angular';
 
