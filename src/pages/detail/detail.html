@@ -6,49 +6,18 @@
 
 <ion-content padding>
 
-    <ion-card>
+    <ion-card *ngFor="let coverage of coverages">
         <ion-card-header>
-            <ion-icon name="medical" item-left></ion-icon>
-            Flags
+            <ion-icon name="medkit" item-left></ion-icon>
+            {{coverage.DisplayName}}
         </ion-card-header>
 
         <ion-list>
-            <ion-item>
-                <ion-label>Preis: {{price}} € / Year</ion-label>
-            </ion-item>
-            <ion-item>
-                <ion-label>Fahrrad</ion-label>
-                <ion-toggle [(ngModel)]="fahrrad" checked="true" (click)="calcPrice()"></ion-toggle>
-            </ion-item>
-            <ion-item>
-                <ion-label>Motorrad</ion-label>
-                <ion-toggle [(ngModel)]="motorrad" checked="true" (click)="calcPrice()"></ion-toggle>
-            </ion-item>
-            <ion-item>
-                <ion-label>Auto</ion-label>
-                <ion-toggle [(ngModel)]="auto" checked="true" (click)="calcPrice()"></ion-toggle>
-            </ion-item>
-        </ion-list>
-    </ion-card>
-
-    <ion-card>
-        <ion-card-header>
-            <ion-icon name="medical" item-left></ion-icon>
-            KPIs
-        </ion-card-header>
-
-        <ion-list>
-            <ion-item>
-                <ion-label>KPI <img src="assets/{{kpi1}}.jpg" /></ion-label>
-                <ion-range min="1" max="5" step="1" snaps="true" color="secondary" [(ngModel)]="kpi1"></ion-range>
-            </ion-item>
-            <ion-item>
-                <ion-label>KPI <img src="assets/{{kpi2}}.jpg" /></ion-label>
-                <ion-range min="1" max="5" step="1" snaps="true" color="secondary" [(ngModel)]="kpi2"></ion-range>
-            </ion-item>
-            <ion-item>
-                <ion-label>KPI <img src="assets/{{kpi3}}.jpg" /></ion-label>
-                <ion-range min="1" max="5" step="1" snaps="true" color="secondary" [(ngModel)]="kpi3"></ion-range>
+            <ion-item *ngFor="let terms of coverage.CovTerms" text-wrap>
+                <ion-row>
+                	<ion-col><p>{{terms.DisplayName}} <br><span *ngIf="terms.Pattern.Required == true" ion-text color="danger">*Required</span></p></ion-col>
+                	<ion-col><p>{{terms.DisplayValue}}</p></ion-col>
+                </ion-row>
             </ion-item>
         </ion-list>
     </ion-card>

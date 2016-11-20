@@ -2,3 +2,6 @@ ion-card-header {
     color: white !important;
     background-color: RGBA(61, 129, 242, 1.00);
 }
+.item-inner:last-child {
+	border: none !important;
+}

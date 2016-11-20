@@ -21816,9 +21816,31 @@ page-detail ion-label img {
   width: auto;
 }
 
+page-detail-offering ion-label {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+page-detail-offering ion-label img {
+  height: 50px;
+  width: auto;
+}
+
 ion-card-header {
   color: white !important;
   background-color: RGBA(61, 129, 242, 1);
+}
+
+.item-inner:last-child {
+  border: none !important;
 }
 
 page-profile .avatar {

@@ -5,23 +5,31 @@
 </ion-header>
 
 <ion-content no-padding>
-	<div no-padding>
+	<div padding>
 		<ion-segment [(ngModel)]="model">
-		  <ion-segment-button value="currentPolicies">
-		    My Policies
-		  </ion-segment-button>
 		  <ion-segment-button value="offerings">
 		    Offerings
+		  </ion-segment-button>
+		  <ion-segment-button value="currentPolicies">
+		    My Policies
 		  </ion-segment-button>
 		</ion-segment>
 	</div>
 
 	<div [ngSwitch]="model">
 		<ion-list *ngSwitchCase="'currentPolicies'">
+		  <ion-item *ngFor="let item of currentPolicies" (click)="goToPage(item, policies)">
+		    <ion-icon name="{{item.icon}}" item-left></ion-icon>
+		    {{item.name}}
+		    <ion-icon name="arrow-forward" item-right></ion-icon>
+		  </ion-item>
+		</ion-list>
+		<ion-list *ngSwitchCase="'offerings'">
 		  <div *ngIf="loggedIn">
 		  	<ion-item *ngFor="let item of offerings" (click)="goToPage(item, policies)">
 			    <ion-icon name="{{item.icon}}" item-left></ion-icon>
 			    <p>{{item.name}}</p>
+			    <ion-icon name="arrow-forward" item-right></ion-icon>
 			  </ion-item>
 		  </div>
 		  <div *ngIf="!loggedIn">
@@ -31,13 +39,6 @@
 		  	<button ion-button>Ok, go to Login.</button>
 		  </ion-card>
 		  </div>
-		</ion-list>
-
-		<ion-list *ngSwitchCase="'offerings'">
-		  <ion-item *ngFor="let item of currentPolicies" (click)="goToPage(item, policies)">
-		    <ion-icon name="{{item.icon}}" item-left></ion-icon>
-		    {{item.name}}
-		  </ion-item>
 		</ion-list>
 	</div>
 

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { DetailPage } from '../detail/detail';
-import { DetailOfferingPage } from '../detail/detailOffering';
 import { PolicyService} from '../../providers/policy-service';
 import { NavController } from 'ionic-angular';
 
@@ -15,57 +14,50 @@ export class HomePage {
     private offerings;
     private loggedIn;
     private policies;
-    private model = {
-    	currentPolicies: this.currentPolicies,
-    	offerings: this.offerings
-    }
+    private model: any;
 
   constructor(public navCtrl: NavController, public policyService: PolicyService) {
       this.currentPolicies = [{
-          name: "Unfall",
-          icon: "medical"
+          name: "Accident",
+          icon: "medkit"
       }, {
-          name: "Hausrat",
-          icon: "medical"
+          name: "Home",
+          icon: "ios-home-outline"
       }];
 
       this.offerings = [{
-          name: "Unfall",
-          icon: "medical",
-          price: 100
+          name: "Accident",
+          icon: "medkit"
       }, {
-          name: "Rechtschutz",
-          icon: "medical",
-          price: 100
+          name: "Legal Cost",
+          icon: "briefcase"
       }, {
-          name: "Mobilschutz",
-          icon: "medical",
-          price: 100
+          name: "Mobile Protection",
+          icon: "phone-portrait"
       }, {
-          name: "Hausrat",
-          icon: "medical",
-          price: 100
+          name: "Home",
+          icon: "ios-home-outline"
       }, {
-          name: "Haftpflicht",
-          icon: "medical",
-          price: 100
+          name: "General Liability",
+          icon: "medical"
       }, {
-          name: "Gebaeude",
-          icon: "medical",
-          price: 100
+          name: "Building",
+          icon: "home"
       }];
 
       this.loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
 
       this.policyService = policyService;
       this.loadPolicies();
+      this.model = "offerings";
   }
 
   goToPage(data, policies) {
-    this.navCtrl.push(DetailPage, {
+      this.navCtrl.push(DetailPage, {
         data: data,
         policies: policies
-    });
+      });
+
   }
 
   loadPolicies() {
