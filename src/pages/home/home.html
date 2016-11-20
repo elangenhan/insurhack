@@ -4,33 +4,42 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card *ngIf="loggedIn">
-    <ion-card-header>
-      <ion-icon name="medical" item-left></ion-icon>
-      My Insurance Policies
-    </ion-card-header>
+<ion-content no-padding>
+	<div no-padding>
+		<ion-segment [(ngModel)]="model">
+		  <ion-segment-button value="currentPolicies">
+		    My Policies
+		  </ion-segment-button>
+		  <ion-segment-button value="offerings">
+		    Offerings
+		  </ion-segment-button>
+		</ion-segment>
+	</div>
 
-    <ion-list>
-      <button ion-item *ngFor="let item of currentPolicies" (click)="goToPage(item, policies)">
-        <ion-icon name="{{item.icon}}" item-left></ion-icon>
-        {{item.name}}
-       </button>
-     </ion-list>
-   </ion-card>
+	<div [ngSwitch]="model">
+		<ion-list *ngSwitchCase="'currentPolicies'">
+		  <div *ngIf="loggedIn">
+		  	<ion-item *ngFor="let item of offerings" (click)="goToPage(item, policies)">
+			    <ion-icon name="{{item.icon}}" item-left></ion-icon>
+			    <p>{{item.name}}</p>
+			  </ion-item>
+		  </div>
+		  <div *ngIf="!loggedIn">
+		  <ion-card padding-bottom text-center>
+		  	<img src="assets/wrong-way.jpg" alt="Wrong way">
+		  	<ion-card-title padding>You need to login, to see this page. :)</ion-card-title>
+		  	<button ion-button>Ok, go to Login.</button>
+		  </ion-card>
+		  </div>
+		</ion-list>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-icon name="medical" item-left></ion-icon>
-      Offerings
-    </ion-card-header>
+		<ion-list *ngSwitchCase="'offerings'">
+		  <ion-item *ngFor="let item of currentPolicies" (click)="goToPage(item, policies)">
+		    <ion-icon name="{{item.icon}}" item-left></ion-icon>
+		    {{item.name}}
+		  </ion-item>
+		</ion-list>
+	</div>
 
-    <ion-list>
-      <button ion-item *ngFor="let item of offerings" (click)="goToPage(item, policies)">
-        <ion-icon name="{{item.icon}}" item-left></ion-icon>
-        {{item.name}}
-       </button>
-     </ion-list>
-   </ion-card>
 
 </ion-content>
