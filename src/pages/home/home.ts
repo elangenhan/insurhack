@@ -30,6 +30,7 @@ export class HomePage {
 
       this.offerings = [{
           name: "Unfall",
+
           icon: "medkit"
       }, {
           name: "Rechtschutz",
@@ -42,7 +43,8 @@ export class HomePage {
           icon: "ios-home-outline"
       }, {
           name: "Haftpflicht",
-          icon: "medical"
+          icon: "medical",
+          price: 100
       }, {
           name: "Gebaeude",
           icon: "home"
