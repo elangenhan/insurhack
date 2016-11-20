@@ -8,7 +8,7 @@ var options_gi = {
     path : "",
     grant_type : "password",
     headers : {
-        Authorization : "Bearer ca125024-ea65-3588-b803-89b0a2f9c5fd"
+        Authorization : "Bearer a2658133-1d72-3f33-911f-89f87abb3364"
     },
     method : "GET",
     json:true,
@@ -88,9 +88,9 @@ exports.get_account = function(callback, id) {
             if(!data.AccountHolderContact.EmailAddress1 || !data.AccountHolderContact.PrimaryPhone || !data.AccountHolderContact.LastName
                 || !data.AccountHolderContact.FirstName || !data.AccountHolderContact.DateOfBirth ||!data.AccountHolderContact.Gender
                 || !data.AccountNumber || !data.AccountHolderContact.PrimaryAddress)
-                return callback(get_mocked(mockfile));
+                callback(get_mocked(mockfile));
             else
-                callback(obj);
+                callback(data);
         });
     })
     req.end();
