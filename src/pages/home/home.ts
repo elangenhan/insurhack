@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DetailPage } from '../detail/detail';
+import { DetailOfferingPage } from '../detailOffering/detailOffering';
 import { PolicyService} from '../../providers/policy-service';
 import { NavController } from 'ionic-angular';
 
@@ -53,10 +54,18 @@ export class HomePage {
   }
 
   goToPage(data, policies) {
+    console.log(this.model);
+    if(this.model == "offerings") {
+      this.navCtrl.push(DetailOfferingPage, {
+        data: data,
+        policies: policies
+      });
+    } else {
       this.navCtrl.push(DetailPage, {
         data: data,
         policies: policies
       });
+    }
 
   }
 

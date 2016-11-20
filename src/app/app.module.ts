@@ -6,6 +6,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DetailPage } from '../pages/detail/detail';
+import { DetailOfferingPage } from '../pages/detailOffering/detailOffering';
 import { LoginPage } from '../pages/login/login';
 import { StartPage } from '../pages/start/start';
 import { ModalContentPage } from '../pages/start/start';
@@ -21,7 +22,8 @@ import { ModalContentPage } from '../pages/start/start';
     LoginPage,
     StartPage,
     ModalContentPage,
-    TabsPage
+    TabsPage,
+    DetailOfferingPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -37,7 +39,8 @@ import { ModalContentPage } from '../pages/start/start';
     LoginPage,
     StartPage,
     ModalContentPage,
-    TabsPage
+    TabsPage,
+    DetailOfferingPage
   ],
   providers: []
 })
