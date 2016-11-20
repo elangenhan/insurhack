@@ -12,7 +12,7 @@
     </ion-card-header>
 
     <ion-list>
-      <button ion-item *ngFor="let item of currentPolicies" (click)="goToPage(item)">
+      <button ion-item *ngFor="let item of currentPolicies" (click)="goToPage(item, policies)">
         <ion-icon name="{{item.icon}}" item-left></ion-icon>
         {{item.name}}
        </button>
@@ -26,7 +26,7 @@
     </ion-card-header>
 
     <ion-list>
-      <button ion-item *ngFor="let item of offerings" (click)="goToPage(item)">
+      <button ion-item *ngFor="let item of offerings" (click)="goToPage(item, policies)">
         <ion-icon name="{{item.icon}}" item-left></ion-icon>
         {{item.name}}
        </button>

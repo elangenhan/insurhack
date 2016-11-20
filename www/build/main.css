@@ -21757,24 +21757,19 @@ sub {
   background-color: #3f8bc5;
 }
 
-page-chat .messageWrapper {
-  overflow: scroll;
-  margin-bottom: 50px;
-}
-
-page-chat .messageWrapper .chat-bubble {
+page-chat .chat-bubble {
   padding: 10px;
   background-color: RGBA(61, 129, 242, 1);
   color: white;
   border-radius: 20px;
 }
 
-page-chat .messageWrapper .bubble-left {
+page-chat .bubble-left {
   margin: 10px 80px 10px 10px;
   background-color: RGBA(61, 129, 242, 0.8);
 }
 
-page-chat .messageWrapper .bubble-right {
+page-chat .bubble-right {
   margin: 10px 10px 10px 80px;
 }
 

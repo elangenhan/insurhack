@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ChatService } from '../../providers/chat-service';
 import { NavController } from 'ionic-angular';
+import { Content } from 'ionic-angular';
 
 @Component({
   selector: 'page-chat',
@@ -12,6 +13,19 @@ export class ChatPage {
   private messages = [];
   private messageInput;
   private context = {};
+
+  @ViewChild(Content) content: Content;
+
+  scrollToBottom() {
+    this.content.scrollToBottom(0);
+    let content = this.content;
+    setTimeout(function() {
+      content.scrollToBottom(0);
+    }, 50);
+    setTimeout(function() {
+      content.scrollToBottom(0);
+    }, 200);
+  }
 
   constructor(public navCtrl: NavController, public chatService: ChatService) {
     this.init();
@@ -30,11 +44,14 @@ export class ChatPage {
             align: "left",
             message: tmp[j]
           })
+          this.scrollToBottom();
         }
+        this.scrollToBottom();
       })
   }
 
   sendMessage(input: string) {
+    this.scrollToBottom();
     if(input != "" && input != undefined) {
       this.chatService.sendMessage({
         message: input,
@@ -48,12 +65,15 @@ export class ChatPage {
             align: "left",
             message: tmp[j]
           })
+          this.scrollToBottom();
         }
+        this.scrollToBottom();
       })
       this.messages.push({
           align: "right",
           message: input
-        })
+        });
+      this.scrollToBottom();
     }
 
       this.messageInput = "";
