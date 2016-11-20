@@ -53,7 +53,7 @@ export class ChatPage {
       this.messages.push({
           align: "right",
           message: input
-        })
+        });
     }
 
       this.messageInput = "";
