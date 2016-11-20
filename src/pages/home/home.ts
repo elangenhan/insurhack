@@ -30,22 +30,28 @@ export class HomePage {
 
       this.offerings = [{
           name: "Unfall",
-          icon: "medical"
+          icon: "medical",
+          price: 100
       }, {
           name: "Rechtschutz",
-          icon: "medical"
+          icon: "medical",
+          price: 100
       }, {
           name: "Mobilschutz",
-          icon: "medical"
+          icon: "medical",
+          price: 100
       }, {
           name: "Hausrat",
-          icon: "medical"
+          icon: "medical",
+          price: 100
       }, {
           name: "Haftpflicht",
-          icon: "medical"
+          icon: "medical",
+          price: 100
       }, {
           name: "Gebaeude",
-          icon: "medical"
+          icon: "medical",
+          price: 100
       }];
 
       this.loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
