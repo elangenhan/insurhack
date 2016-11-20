@@ -22,6 +22,7 @@
 		  	<ion-item *ngFor="let item of offerings" (click)="goToPage(item, policies)">
 			    <ion-icon name="{{item.icon}}" item-left></ion-icon>
 			    <p>{{item.name}}</p>
+			    <ion-icon name="arrow-forward" item-right></ion-icon>
 			  </ion-item>
 		  </div>
 		  <div *ngIf="!loggedIn">
@@ -37,6 +38,7 @@
 		  <ion-item *ngFor="let item of currentPolicies" (click)="goToPage(item, policies)">
 		    <ion-icon name="{{item.icon}}" item-left></ion-icon>
 		    {{item.name}}
+		    <ion-icon name="arrow-forward" item-right></ion-icon>
 		  </ion-item>
 		</ion-list>
 	</div>
