@@ -21821,6 +21821,10 @@ ion-card-header {
   background-color: RGBA(61, 129, 242, 1);
 }
 
+.item-inner:last-child {
+  border: none !important;
+}
+
 page-profile .avatar {
   position: absolute;
   top: 140px;

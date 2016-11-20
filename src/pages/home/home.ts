@@ -18,30 +18,30 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public policyService: PolicyService) {
       this.currentPolicies = [{
-          name: "Unfall",
+          name: "Accident",
           icon: "medkit"
       }, {
-          name: "Hausrat",
+          name: "Home",
           icon: "ios-home-outline"
       }];
 
       this.offerings = [{
-          name: "Unfall",
+          name: "Accident",
           icon: "medkit"
       }, {
-          name: "Rechtschutz",
+          name: "Legal Cost",
           icon: "briefcase"
       }, {
-          name: "Mobilschutz",
+          name: "Mobile Protection",
           icon: "phone-portrait"
       }, {
-          name: "Hausrat",
+          name: "Home",
           icon: "ios-home-outline"
       }, {
-          name: "Haftpflicht",
+          name: "General Liability",
           icon: "medical"
       }, {
-          name: "Gebaeude",
+          name: "Building",
           icon: "home"
       }];
 
