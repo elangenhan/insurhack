@@ -5,7 +5,6 @@
 </ion-header>
 
 <ion-content no-padding>
-
 	<div no-padding>
 		<ion-segment [(ngModel)]="model">
 		  <ion-segment-button value="currentPolicies">
@@ -20,7 +19,7 @@
 	<div [ngSwitch]="model">
 		<ion-list *ngSwitchCase="'currentPolicies'">
 		  <div *ngIf="loggedIn">
-		  	<ion-item *ngFor="let item of offerings" (click)="goToPage(item)">
+		  	<ion-item *ngFor="let item of offerings" (click)="goToPage(item, policies)">
 			    <ion-icon name="{{item.icon}}" item-left></ion-icon>
 			    <p>{{item.name}}</p>
 			  </ion-item>
@@ -35,11 +34,12 @@
 		</ion-list>
 
 		<ion-list *ngSwitchCase="'offerings'">
-		  <ion-item *ngFor="let item of currentPolicies" (click)="goToPage(item)">
+		  <ion-item *ngFor="let item of currentPolicies" (click)="goToPage(item, policies)">
 		    <ion-icon name="{{item.icon}}" item-left></ion-icon>
 		    {{item.name}}
 		  </ion-item>
 		</ion-list>
 	</div>
+
 
 </ion-content>

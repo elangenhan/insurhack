@@ -54,9 +54,10 @@ export class HomePage {
       this.loadPolicies();
   }
 
-  goToPage(data) {
+  goToPage(data, policies) {
     this.navCtrl.push(DetailPage, {
-        data: data
+        data: data,
+        policies: policies
     });
   }
 
