@@ -14,7 +14,7 @@ var conversation = watson.conversation({
 app.use(bodyParser());
 
 var zapi = require('./server/zapi.js');
-var mapi = require('./server/mapi.js');
+//var mapi = require('./server/mapi.js');
 //var chat = require('./server/chat.js');
 
 var httpsoptions = {
