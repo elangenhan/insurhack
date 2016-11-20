@@ -14,34 +14,38 @@ export class HomePage {
     private offerings;
     private loggedIn;
     private policies;
+    private model = {
+    	currentPolicies: this.currentPolicies,
+    	offerings: this.offerings
+    }
 
   constructor(public navCtrl: NavController, public policyService: PolicyService) {
       this.currentPolicies = [{
           name: "Unfall",
-          icon: "medical"
+          icon: "medkit"
       }, {
           name: "Hausrat",
-          icon: "medical"
+          icon: "ios-home-outline"
       }];
 
       this.offerings = [{
           name: "Unfall",
-          icon: "medical"
+          icon: "medkit"
       }, {
           name: "Rechtschutz",
-          icon: "medical"
+          icon: "briefcase"
       }, {
           name: "Mobilschutz",
-          icon: "medical"
+          icon: "phone-portrait"
       }, {
           name: "Hausrat",
-          icon: "medical"
+          icon: "ios-home-outline"
       }, {
           name: "Haftpflicht",
           icon: "medical"
       }, {
           name: "Gebaeude",
-          icon: "medical"
+          icon: "home"
       }];
 
       this.loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
